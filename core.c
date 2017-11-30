@@ -2,11 +2,10 @@
 #include "interface.h"
 #include <stdio.h>
 #include <stdbool.h>
-#define MAX_CONTACT 80
+#define CAPACITY_LIMIT 80
 
-struct Person person[MAX_CONTACT];
-int nxt_id;
-int end;
+struct Person person[CAPACITY_LIMIT];
+int extremity;
 
 // 从文件中获取保存的联系人信息
 void init()
@@ -22,24 +21,23 @@ void add_record()
 {
     display_add_module();
     
-    if (end + 1 > MAX_CONTACT) {
+    if (extremity + 1 > CAPACITY_LIMIT) {
         clear_display();
         printf("内存已满，不能再添加新的联系人\n");
         return;
     }
 
-    printf("正在添加第%d位联系人\n", end + 1);
-    person[end].id = end;
+    printf("正在添加第%d位联系人\n", extremity + 1);
 
-    printf("姓名："); str_input(person[end].name);
-    printf("联系电话："); int_input(&person[end].number);
-    printf("年龄："); int_input(&person[end].age);
-    printf("电子邮件："); str_input(person[end].email);
-    printf("通信地址："); str_input(person[end].address);
+    printf("姓名："); str_input(person[extremity].name);
+    printf("电话："); int_input(&person[extremity].number);
+    printf("年龄："); int_input(&person[extremity].age);
+    printf("电邮："); str_input(person[extremity].email);
+    printf("地址："); str_input(person[extremity].address);
 
     clear_display();
-    printf("新的联系人“%s”已添加到系统中\n", person[end].name);
-    end++;
+    printf("新的联系人“%s”已添加到系统中\n", person[extremity].name);
+    extremity++;
 }
 
 // 显示特定联系人的信息
@@ -58,21 +56,21 @@ void show_record()
 {
     display_show_module();
 
-    if (end == 0) {
+    if (extremity == 0) {
         printf("当前系统中没有联系人信息\n");
         pause_display();
         clear_display();
         return;
     }
 
-    for (int i = 0; i < end; i++) show_person(&person[i]);
+    for (int i = 0; i < extremity; i++) show_person(&person[i]);
 }
 
 // 删除记录
 void delete_record()
 {
     display_delete_module();
-    if (end == 0) {
+    if (extremity == 0) {
         printf("当前系统中没有联系人信息，不能执行删除操作\n");
         return;
     }
@@ -104,7 +102,7 @@ void save_record()
         return;
     }
     
-    for (int i = 0; i < end; i++)
+    for (int i = 0; i < extremity; i++)
     {
         int status = fprintf(
             "%s,%d,%d,%s,%s\n",

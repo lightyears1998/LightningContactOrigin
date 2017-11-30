@@ -2,7 +2,6 @@
 
 struct Person
 {
-    int id;
     char name[BUFFER_LEN];
     int age;
     int number;
