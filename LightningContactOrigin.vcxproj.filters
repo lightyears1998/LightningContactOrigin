@@ -18,5 +18,8 @@
     <Text Include="README.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="License.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
