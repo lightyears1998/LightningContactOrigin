@@ -69,6 +69,13 @@ void int_input(int * num)
     eatline();
 }
 
+// 接受用户输入的数字
+void long_input(long long * num)
+{
+    while (output(INPUT_HINT), scanf("%lld", num) == 0) eatline();
+    eatline();
+}
+
 // 接受用户输入的字符串
 void str_input(char * str)
 {

@@ -30,13 +30,14 @@ void add_record()
     printf("正在添加第%d位联系人\n", extremity + 1);
 
     printf("姓名："); str_input(person[extremity].name);
-    printf("电话："); int_input(&person[extremity].number);
     printf("年龄："); int_input(&person[extremity].age);
+    printf("电话："); long_input(&person[extremity].number);
     printf("电邮："); str_input(person[extremity].email);
     printf("地址："); str_input(person[extremity].address);
 
     clear_display();
     printf("新的联系人“%s”已添加到系统中\n", person[extremity].name);
+    
     extremity++;
 }
 
@@ -44,8 +45,8 @@ void add_record()
 void show_person(struct Person * p)
 {
     printf("姓名：%s\n", p -> name);
-    printf("电话：%d\n", p -> number);
     printf("年龄：%d\n", p -> age);
+    printf("电话：%lld\n", p -> number);
     printf("电邮：%s\n", p -> email); 
     printf("地址：%s\n", p -> address);
     printf("--------------------------------\n");
@@ -105,7 +106,8 @@ void save_record()
     for (int i = 0; i < extremity; i++)
     {
         int status = fprintf(
-            "%s,%d,%d,%s,%s\n",
+            fp,
+            "%s,%d,%lld,%s,%s\n",
             person[i].name,
             person[i].age,
             person[i].number,

@@ -27,7 +27,8 @@ void call_module(int idx)
         case 2: show_record(); break;
         case 3: delete_record(); break;
         case 4: query_record(); break;
-        case 5: save_record(); break;
-        case 6: sort_record(); break;
+        case 5: modify_record(); break;
+        case 6: save_record(); break;
+        case 7: sort_record(); break;
     }
 }

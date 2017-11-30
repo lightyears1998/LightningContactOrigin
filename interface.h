@@ -4,6 +4,7 @@ int input(void);
 void receive(char *, int);
 int limited_input(int, int);
 void int_input(int *);
+void long_input(long long *);
 void str_input(char *);
 
 void clear_display(void);
