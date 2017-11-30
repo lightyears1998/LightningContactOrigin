@@ -10,4 +10,5 @@ LCO是一个命令行界面的联系人信息管理系统，它起源于华南农业大学2017级C语言课程的大
 
 ## 编程环境
 
+- 简体中文编码（GB2312，Code Page 936）
 - Visual Studio 2017 with MSVC Complier
