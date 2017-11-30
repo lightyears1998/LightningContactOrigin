@@ -1,13 +1,11 @@
-#define NAME_LEN 1024
-#define ADDRESS_LEN 1024
-#define EMAIL_LEN 1024
+#define BUFFER_LEN 1024
 
 struct Person
 {
     int id;
-    char name[NAME_LEN];
+    char name[BUFFER_LEN];
     int age;
     int number;
-    char email[EMAIL_LEN];
-    char address[ADDRESS_LEN];
+    char email[BUFFER_LEN];
+    char address[BUFFER_LEN];
 };

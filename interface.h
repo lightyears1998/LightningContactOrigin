@@ -7,6 +7,7 @@ void int_input(int *);
 void str_input(char *);
 
 void clear_display(void);
+void pause_display(void);
 void output(const char *);
 
 void display_main_menu(void);
