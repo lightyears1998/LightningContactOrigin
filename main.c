@@ -23,12 +23,12 @@ void call_module(int idx)
 {
     switch (idx)
     {
-        case 0: goodbye();
-        case 1: add_record();
-        case 2: show_record();
-        case 3: delete_record();
-        case 4: query_record();
-        case 5: save_record();
-        case 6: sort_record();
+        case 0: goodbye(); break;
+        case 1: add_record(); break;
+        case 2: show_record(); break;
+        case 3: delete_record(); break;
+        case 4: query_record(); break;
+        case 5: save_record(); break;
+        case 6: sort_record(); break;
     }
 }
