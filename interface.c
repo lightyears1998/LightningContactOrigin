@@ -67,12 +67,18 @@ void clear_display(void)
 // 显示主菜单
 void display_main_menu(void)
 {
-    output(PROJECT_NAME);
-    output(SLASH);
-    output(MODULE_MAIN_MENU);
-    output(NEW_LINE);
-    output(BANNER);
-    output(NEW_LINE);
+    output(PROJECT_NAME); output(SLASH); output(MODULE_MAIN_MENU); output(NEW_LINE);
+    output(BANNER); output(NEW_LINE);
+
+    output("1"); output(SLASH); output(MODULE_ADD); output(NEW_LINE);
+    output("2"); output(SLASH); output(MODULE_SHOW); output(NEW_LINE);
+    output("3"); output(SLASH); output(MODULE_DELETE); output(NEW_LINE);
+    output("4"); output(SLASH); output(MODULE_QUERY); output(NEW_LINE);
+    output("5"); output(SLASH); output(MODULE_MODIFY); output(NEW_LINE);
+    output("6"); output(SLASH); output(MODULE_SAVE); output(NEW_LINE);
+    output("7"); output(SLASH); output(MODULE_SORT); output(NEW_LINE);
+    output("0"); output(SLASH); output(MODULE_EXIT); output(NEW_LINE);
+    output(BANNER); output(NEW_LINE);
 }
 
 void goodbye(void)

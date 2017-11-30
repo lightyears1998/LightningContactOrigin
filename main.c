@@ -1,7 +1,6 @@
 #include "core.h"
 #include "interface.h"
 #include "contact.h"
-
 #include <stdbool.h>
 
 void call_module(int);
@@ -15,12 +14,12 @@ int main(void)
         input = limited_input('0', '7');
         call_module(input - '0');
     }
-
     return 0;
 }
 
 void call_module(int idx)
 {
+    clear_display();
     switch (idx)
     {
         case 0: goodbye(); break;

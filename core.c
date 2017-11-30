@@ -1,11 +1,24 @@
-void add_record()
+#include "contact.h"
+
+#include <stdio.h>
+
+#define MAX_CONTACT 80
+
+struct Person person[MAX_CONTACT];
+
+void init()
 {
 
 }
 
+void add_record()
+{
+    
+}
+
 void show_record()
 {
-
+    
 }
 
 void delete_record()
