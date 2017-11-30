@@ -5,9 +5,9 @@
 struct Person
 {
     int id;
-    int number;
-    int age;
     char name[NAME_LEN];
-    char address[ADDRESS_LEN];
+    int age;
+    int number;
     char email[EMAIL_LEN];
+    char address[ADDRESS_LEN];
 };
