@@ -1,5 +1,5 @@
 #include "strings.h"
-
+#include "contact.h"
 #include <stdbool.h>
 #include <stdio.h>
 #include <ctype.h>
@@ -72,13 +72,19 @@ void int_input(int * num)
 // 接受用户输入的字符串
 void str_input(char * str)
 {
-    receive(str, 1024);
+    receive(str, BUFFER_LEN);
 }
 
 // 清屏
 void clear_display(void)
 {
     system("cls");
+}
+
+// 等待用户按下任意键继续
+void pause_display(void)
+{
+    system("pause");
 }
 
 // 显示主菜单
@@ -98,43 +104,49 @@ void display_main_menu(void)
     output(BANNER); output(NEW_LINE);
 }
 
-// 显示“添加记录模块”
+// 显示“添加记录”模块
 void display_add_module(void)
 {
     output(PROJECT_NAME); output(SLASH); output(MODULE_ADD); output(NEW_LINE);
     output(BANNER); output(NEW_LINE);
 }
 
+// 显示“浏览记录”模块
 void display_show_module(void)
 {
     output(PROJECT_NAME); output(SLASH); output(MODULE_SHOW); output(NEW_LINE);
     output(BANNER); output(NEW_LINE);
 }
 
+// 显示“删除记录”模块
 void display_delete_module(void)
 {
     output(PROJECT_NAME); output(SLASH); output(MODULE_DELETE); output(NEW_LINE);
     output(BANNER); output(NEW_LINE);
 }
 
+// 显示“查询记录”模块
 void display_query_module(void)
 {
     output(PROJECT_NAME); output(SLASH); output(MODULE_QUERY); output(NEW_LINE);
     output(BANNER); output(NEW_LINE);
 }
 
+// 显示“修改记录”模块
 void display_modify_module(void)
 {
     output(PROJECT_NAME); output(SLASH); output(MODULE_MODIFY); output(NEW_LINE);
     output(BANNER); output(NEW_LINE);
 }
 
+// 显示“保存记录”模块
 void display_save_module(void)
 {
     output(PROJECT_NAME); output(SLASH); output(MODULE_SAVE); output(NEW_LINE);
     output(BANNER); output(NEW_LINE);
 }
 
+// 显示“排序记录”模块
 void display_sort_module(void)
 {
     output(PROJECT_NAME); output(SLASH); output(MODULE_SORT); output(NEW_LINE);
