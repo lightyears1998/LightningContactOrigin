@@ -1,4 +1,4 @@
-#define NAME_LEN 100
+#define NAME_LEN 1024
 #define ADDRESS_LEN 1024
 #define EMAIL_LEN 1024
 
