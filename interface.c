@@ -136,6 +136,7 @@ void display_query_module(void)
     output("4"); output(SLASH); output(QUERY_BY_EMAIL); output(NEW_LINE);
     output("5"); output(SLASH); output(QUERY_BY_ADDRESS); output(NEW_LINE);
     output("0"); output(SLASH); output(UPPER_MODULE); output(NEW_LINE);
+    output(BANNER); output(NEW_LINE);
 }
 
 // 显示“修改记录”模块
@@ -161,6 +162,7 @@ void display_sort_module(void)
     output("1"); output(SLASH); output(SORT_BY_NAME); output(NEW_LINE);
     output("2"); output(SLASH); output(SORT_BY_AGE); output(NEW_LINE);
     output("0"); output(SLASH); output(UPPER_MODULE); output(NEW_LINE);
+    output(BANNER); output(NEW_LINE);
 }
 
 // 显示退出消息

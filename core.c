@@ -86,6 +86,8 @@ void show_record()
     }
 
     for (int i = 0; i < extremity; i++) show_person(i);
+    pause_display();
+    clear_display();
 }
 
 // 删除记录
@@ -155,6 +157,8 @@ void query_record()
             case '4': query_by_email(); break;
             case '5': query_by_address(); break;
         }
+        pause_display();
+        clear_display();
     }
 }
 
@@ -333,10 +337,12 @@ void sort_record()
         case '0': return;
         case '1': {
             qsort(person, extremity, sizeof(struct Person), cmp_name);
+            for (int i = 0; i < extremity; i++) person[i].guid = i;
             break;
         }
         case '2': {
             qsort(person, extremity, sizeof(struct Person), cmp_age);
+            for (int i = 0; i < extremity; i++) person[i].guid = i;
             break;
         }
     }
@@ -353,6 +359,5 @@ int cmp_name(const void * lhs, const void * rhs)
 // 年龄序比较函数
 int cmp_age(const void * lhs, const void * rhs)
 {
-    printf("%d",( (struct Person *)lhs) -> age);
     return ((struct Person *)lhs) -> age - ((struct Person *)rhs) -> age;
 }
