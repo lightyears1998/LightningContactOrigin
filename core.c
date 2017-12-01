@@ -18,6 +18,7 @@ void init()
     char buf[BUFFER_LEN];
     while (fgets(buf, sizeof(buf), fp) != NULL)
     {
+        person[extremity].guid = extremity;
         strncpy(person[extremity].name, buf, strlen(buf) - 1);
         fgets(buf, sizeof(buf), fp);
         person[extremity].age = atoi(buf);
@@ -46,6 +47,7 @@ void add_record()
 
     printf("正在添加第%d位联系人\n", extremity + 1);
 
+    person[extremity].guid = extremity;
     printf("姓名："); str_input(person[extremity].name);
     printf("年龄："); int_input(&person[extremity].age);
     printf("电话："); str_input(person[extremity].number);
@@ -59,9 +61,10 @@ void add_record()
 }
 
 // 显示特定联系人的信息
-void show_person(struct Person * p)
+void show_person(int guid)
 {
-    printf("姓名：%s\n", p -> name);
+    struct Person * p = &person[guid];
+    printf("姓名：%s (#%d)\n", p -> name, p -> guid);
     printf("年龄：%d\n", p -> age);
     printf("电话：%s\n", p -> number);
     printf("电邮：%s\n", p -> email); 
@@ -81,7 +84,7 @@ void show_record()
         return;
     }
 
-    for (int i = 0; i < extremity; i++) show_person(&person[i]);
+    for (int i = 0; i < extremity; i++) show_person(i);
 }
 
 // 删除记录
