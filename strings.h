@@ -21,5 +21,8 @@
 #define QUERY_BY_EMAIL      "查询邮件"
 #define QUERY_BY_ADDRESS    "查询地址"
 
+#define SORT_BY_NAME        "以姓名为序"
+#define SORT_BY_AGE         "以年龄为序"
+
 #define UPPER_MODULE        "返回上级菜单"
 #define GOODBYE             "再见 : )"

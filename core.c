@@ -325,4 +325,19 @@ void save_record()
 void sort_record()
 {
     display_sort_module();
+
+    int oprt; limited_input('0', '2');
+    clear_display();
+    switch (oprt)
+    {
+        case '0': return;
+        case '1': {
+            break;
+        }
+        case '2': {
+            break;
+        }
+    }
+
+    printf("联系人已成功排序\n");
 }
