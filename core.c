@@ -146,6 +146,37 @@ void query_record()
 void modify_record()
 {
     display_modify_module();
+    while (true)
+    {
+        printf("请指定欲修改的联系人的编号：");
+        int guid; int_input(&guid);
+        if (guid < 0)
+        {
+            printf("修改操作已取消\n");
+            pause_display();
+            clear_display();
+            return;
+        }
+        else if (guid >= extremity)
+        {
+            printf("对应GUID的联系人不存在\n");
+        }
+        else
+        {
+            printf("正在修改联系人“%s”\n", person[guid].name);
+            
+            printf("姓名："); str_input(person[guid].name);
+            printf("年龄："); int_input(&person[guid].age);
+            printf("电话："); str_input(person[guid].number);
+            printf("电邮："); str_input(person[guid].email);
+            printf("地址："); str_input(person[guid].address);
+        
+            clear_display();
+            printf("联系人“%s”已修改\n", person[guid].name);
+            pause_display();
+            return;
+        }
+    }
 }
 
 // 保存记录到文件
