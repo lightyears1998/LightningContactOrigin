@@ -15,4 +15,11 @@
 #define MODULE_SORT         "排序记录"
 #define MODULE_EXIT         "退出程序"
 
+#define QUERY_BY_NAME       "查询姓名"
+#define QUERY_BY_AGE        "查询地址"
+#define QUERY_BY_PHONE      "查询电话"
+#define QUERY_BY_EMAIL      "查询邮件"
+#define QUERY_BY_ADDRESS    "查询地址"
+
+#define UPPER_MODULE        "返回上级菜单"
 #define GOODBYE             "再见 : )"

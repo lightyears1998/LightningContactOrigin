@@ -139,7 +139,52 @@ void delete_record()
 // 查询记录
 void query_record()
 {
-    display_query_module();
+    while (true)
+    {
+        display_query_module();   
+        switch (limited_input('0', '5'))
+        {
+            case '0': {
+                clear_display();
+                return;
+            }
+            case '1': query_by_name(); break;
+            case '2': query_by_age(); break;
+            case '3': query_by_phone(); break;
+            case '4': query_by_email(); break;
+            case '5': query_by_address(); break;
+        }
+    }
+}
+
+// 以姓名为关键词查询记录
+void query_by_name(void)
+{
+
+}
+
+// 以年龄为关键词查询记录
+void query_by_age(void)
+{
+
+}
+
+// 以手机为关键词查询记录
+void query_by_phone(void)
+{
+
+}
+
+// 以电邮为关键词查询记录
+void query_by_email(void)
+{
+
+}
+
+// 以地址为关键词查询记录
+void query_by_email(void)
+{
+
 }
 
 // 修改记录

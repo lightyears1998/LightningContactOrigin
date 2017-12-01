@@ -130,6 +130,12 @@ void display_query_module(void)
 {
     output(PROJECT_NAME); output(SLASH); output(MODULE_QUERY); output(NEW_LINE);
     output(BANNER); output(NEW_LINE);
+    output("0"); output(SLASH); output(UPPER_MODULE); output(NEW_LINE);
+    output("1"); output(SLASH); output(QUERY_BY_NAME); output(NEW_LINE);
+    output("2"); output(SLASH); output(QUERY_BY_AGE); output(NEW_LINE);
+    output("3"); output(SLASH); output(QUERY_BY_PHONE); output(NEW_LINE);
+    output("4"); output(SLASH); output(QUERY_BY_EMAIL); output(NEW_LINE);
+    output("5"); output(SLASH); output(QUERY_BY_ADDRESS); output(NEW_LINE);
 }
 
 // 显示“修改记录”模块
