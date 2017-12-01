@@ -13,3 +13,6 @@ void query_by_age(void);
 void query_by_phone(void);
 void query_by_email(void);
 void query_by_address(void);
+
+int cmp_name(const void *, const void *);
+int cmp_age(const void *, const void *);

@@ -326,18 +326,33 @@ void sort_record()
 {
     display_sort_module();
 
-    int oprt; limited_input('0', '2');
+    int oprt; oprt = limited_input('0', '2');
     clear_display();
     switch (oprt)
     {
         case '0': return;
         case '1': {
+            qsort(person, extremity, sizeof(struct Person), cmp_name);
             break;
         }
         case '2': {
+            qsort(person, extremity, sizeof(struct Person), cmp_age);
             break;
         }
     }
 
     printf("联系人已成功排序\n");
+}
+
+// 姓名序比较函数
+int cmp_name(const void * lhs, const void * rhs)
+{
+    return strcmp(((struct Person *)lhs) -> name, ((struct Person *)rhs) -> name);
+}
+
+// 年龄序比较函数
+int cmp_age(const void * lhs, const void * rhs)
+{
+    printf("%d",( (struct Person *)lhs) -> age);
+    return ((struct Person *)lhs) -> age - ((struct Person *)rhs) -> age;
 }

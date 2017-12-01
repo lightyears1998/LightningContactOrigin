@@ -158,9 +158,9 @@ void display_sort_module(void)
     output(PROJECT_NAME); output(SLASH); output(MODULE_SORT); output(NEW_LINE);
     output(BANNER); output(NEW_LINE);
 
-    output("1"); output(SLASH); output(SOTR_BY_NAME);
-    output("2"); output(SLASH); output(SOTR_BY_AGE);
-    output("0"); output(SLASH); output(UPPER_MODULE);
+    output("1"); output(SLASH); output(SORT_BY_NAME); output(NEW_LINE);
+    output("2"); output(SLASH); output(SORT_BY_AGE); output(NEW_LINE);
+    output("0"); output(SLASH); output(UPPER_MODULE); output(NEW_LINE);
 }
 
 // 显示退出消息
