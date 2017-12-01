@@ -1,3 +1,5 @@
+void init(void);
+
 void add_record(void);
 void show_record(void);
 void delete_record(void);

@@ -7,12 +7,11 @@ void call_module(int);
 
 int main(void)
 {
-    int input;
+    init();
     while (true)
     {
         display_main_menu();
-        input = limited_input('0', '7');
-        call_module(input - '0');
+        call_module(limited_input('0', '7') - '0');
     }
     return 0;
 }

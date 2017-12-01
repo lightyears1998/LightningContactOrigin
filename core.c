@@ -1,7 +1,9 @@
 #include "main.h"
 #include "contact.h"
 #include "interface.h"
+#include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include <stdbool.h>
 
 struct Person person[CAPACITY_LIMIT];
@@ -13,6 +15,21 @@ void init()
     FILE * fp = fopen("info.csv", "r");
     if (fp == NULL) return;
     
+    char buf[BUFFER_LEN];
+    while (fgets(buf, sizeof(buf), fp) != NULL)
+    {
+        strncpy(person[extremity].name, buf, strlen(buf) - 1);
+        fgets(buf, sizeof(buf), fp);
+        person[extremity].age = atoi(buf);
+        fgets(buf, sizeof(buf), fp);
+        strncpy(person[extremity].number, buf, strlen(buf) - 1);
+        fgets(buf, sizeof(buf), fp);
+        strncpy(person[extremity].email, buf, strlen(buf) - 1);
+        fgets(buf, sizeof(buf), fp);
+        strncpy(person[extremity].address, buf, strlen(buf) - 1);
+        extremity++;
+    }
+
     fclose(fp);
 }
 
@@ -123,7 +140,7 @@ void save_record()
     }
 
     fclose(fp);
-    printf("记录已成功保存");
+    printf("记录已成功保存\n");
 
     pause_display();
     clear_display();
