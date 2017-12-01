@@ -31,7 +31,7 @@ void add_record()
 
     printf("姓名："); str_input(person[extremity].name);
     printf("年龄："); int_input(&person[extremity].age);
-    printf("电话："); long_input(&person[extremity].number);
+    printf("电话："); str_input(person[extremity].number);
     printf("电邮："); str_input(person[extremity].email);
     printf("地址："); str_input(person[extremity].address);
 
@@ -46,7 +46,7 @@ void show_person(struct Person * p)
 {
     printf("姓名：%s\n", p -> name);
     printf("年龄：%d\n", p -> age);
-    printf("电话：%lld\n", p -> number);
+    printf("电话：%s\n", p -> number);
     printf("电邮：%s\n", p -> email); 
     printf("地址：%s\n", p -> address);
     printf("--------------------------------\n");
@@ -107,7 +107,7 @@ void save_record()
     {
         int status = fprintf(
             fp,
-            "%s,%d,%lld,%s,%s\n",
+            "%s\n%d\n%s\n%s\n%s\n",
             person[i].name,
             person[i].age,
             person[i].number,
@@ -121,8 +121,12 @@ void save_record()
             return;
         }
     }
-    
+
     fclose(fp);
+    printf("记录已成功保存");
+
+    pause_display();
+    clear_display();
 }
 
 // 排序记录

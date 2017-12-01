@@ -4,7 +4,7 @@ struct Person
 {
     char name[BUFFER_LEN];
     int age;
-    long long number;
+    char number[BUFFER_LEN];
     char email[BUFFER_LEN];
     char address[BUFFER_LEN];
 };
