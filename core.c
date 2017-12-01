@@ -95,6 +95,45 @@ void delete_record()
         printf("当前系统中没有联系人信息，不能执行删除操作\n");
         return;
     }
+
+    while (true)
+    {
+        printf("请指定欲删除联系人的GUID：");
+        int guid; int_input(&guid);
+        if (guid < 0) {
+            printf("删除操作已取消\n");
+            pause_display();
+            clear_display();
+            return;
+        }
+        else if (guid >= extremity) {
+            printf("该GUID对应的联系人不存在\n");
+        }
+        else {
+            show_person(guid);
+            printf("确认删除？");
+            char buf[BUFFER_LEN]; str_input(buf);
+            if (buf[0] == 'Y' || buf[0] == 'y') {
+                for (int i = guid; i < extremity - 1; i++)
+                {
+                    strncpy(person[i].name, person[i + 1].name, BUFFER_LEN - 1);
+                    person[i].age = person[i + 1].age;
+                    strncpy(person[i].number, person[i + 1].number, BUFFER_LEN - 1);
+                    strncpy(person[i].email, person[i + 1].email, BUFFER_LEN - 1);
+                    strncpy(person[i].address, person[i + 1].address, BUFFER_LEN - 1);
+                }
+                extremity--;
+                printf("联系人已成功删除\n");
+                return;
+            }
+            else {
+                printf("删除操作已取消\n");
+                pause_display();
+                clear_display();
+                return;
+            }
+        }
+    }
 }
 
 // 查询记录
