@@ -1,8 +1,8 @@
+#include "main.h"
 #include "contact.h"
 #include "interface.h"
 #include <stdio.h>
 #include <stdbool.h>
-#define CAPACITY_LIMIT 80
 
 struct Person person[CAPACITY_LIMIT];
 int extremity;

@@ -1,4 +1,4 @@
-#define BUFFER_LEN 1024
+#include "main.h"
 
 struct Person
 {
