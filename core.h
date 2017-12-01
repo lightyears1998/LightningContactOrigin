@@ -7,3 +7,9 @@ void query_record(void);
 void modify_record(void);
 void save_record(void);
 void sort_record(void);
+
+void query_by_name(void);
+void query_by_age(void);
+void query_by_phone(void);
+void query_by_email(void);
+void query_by_address(void);

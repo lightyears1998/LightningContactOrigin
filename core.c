@@ -1,5 +1,6 @@
 #include "main.h"
 #include "contact.h"
+#include "core.h"
 #include "interface.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -142,12 +143,12 @@ void query_record()
     while (true)
     {
         display_query_module();   
-        switch (limited_input('0', '5'))
+        
+        int oprt = limited_input('0', '5');
+        clear_display();
+        switch (oprt)
         {
-            case '0': {
-                clear_display();
-                return;
-            }
+            case '0': return;
             case '1': query_by_name(); break;
             case '2': query_by_age(); break;
             case '3': query_by_phone(); break;
@@ -160,31 +161,87 @@ void query_record()
 // 以姓名为关键词查询记录
 void query_by_name(void)
 {
-
+    char buf[BUFFER_LEN]; 
+    printf("请键入欲查询的姓名："); str_input(buf);
+    
+    bool found = false;
+    for (int i = 0; i < extremity; i++)
+    {
+        if (strstr(person[i].name, buf) != NULL) {
+            show_person(i);
+            found = true;
+        }
+    }
+    if (!found) printf("没有找到与“%s”相关的联系人\n", buf);
 }
 
 // 以年龄为关键词查询记录
 void query_by_age(void)
 {
-
+    int age; 
+    printf("请键入欲查询的年龄："); int_input(&age);
+    
+    bool found = false;
+    for (int i = 0; i < extremity; i++)
+    {
+        if (person[i].age == age) {
+            show_person(i);
+            found = true;
+        }
+    }
+    if (!found) printf("没有找到年龄为%d的联系人\n", age);
 }
 
 // 以手机为关键词查询记录
 void query_by_phone(void)
 {
-
+    char buf[BUFFER_LEN]; 
+    printf("请键入欲查询的电话："); str_input(buf);
+    
+    bool found = false;
+    for (int i = 0; i < extremity; i++)
+    {
+        if (strstr(person[i].number, buf) != NULL) 
+        {
+            show_person(i);
+            found = true;
+        }
+    }
+    if (!found) printf("没有找到与“%s”相关的联系人\n", buf);
 }
 
 // 以电邮为关键词查询记录
 void query_by_email(void)
 {
-
+    char buf[BUFFER_LEN]; 
+    printf("请键入欲查询的电邮："); str_input(buf);
+    
+    bool found = false;
+    for (int i = 0; i < extremity; i++)
+    {
+        if (strstr(person[i].email, buf) != NULL) {
+            show_person(i);
+            found = true;
+        }
+    }
+    if (!found) printf("没有找到与“%s”相关的联系人\n", buf);
 }
 
 // 以地址为关键词查询记录
-void query_by_email(void)
+void query_by_address(void)
 {
-
+    char buf[BUFFER_LEN]; 
+    printf("请键入欲查询的地址："); str_input(buf);
+    
+    bool found = false;
+    for (int i = 0; i < extremity; i++)
+    {
+        if (strstr(person[i].address, buf) != NULL) {
+            show_person(i);
+            found = true;
+        }
+    }
+    if (!found) printf("没有找到与“%s”相关的联系人\n", buf);
 }
 
 // 修改记录
