@@ -279,9 +279,9 @@ void modify_record()
             printf("电邮："); str_input(person[guid].email);
             printf("地址："); str_input(person[guid].address);
         
-            clear_display();
             printf("联系人“%s”已修改\n", person[guid].name);
             pause_display();
+            clear_display();
             return;
         }
     }
