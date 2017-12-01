@@ -114,7 +114,7 @@ void delete_record()
         }
         else {
             show_person(guid);
-            printf("确认删除？");
+            printf("请确认删除 (Y/N) ");
             char buf[BUFFER_LEN]; str_input(buf);
             if (buf[0] == 'Y' || buf[0] == 'y') {
                 for (int i = guid; i < extremity - 1; i++)
@@ -126,7 +126,9 @@ void delete_record()
                     strncpy(person[i].address, person[i + 1].address, BUFFER_LEN - 1);
                 }
                 extremity--;
-                printf("联系人已成功删除\n");
+                printf("成功删除联系人\n");
+                pause_display();
+                clear_display();
                 return;
             }
             else {
@@ -153,7 +155,7 @@ void query_record()
             case '0': return;
             case '1': query_by_name(); break;
             case '2': query_by_age(); break;
-            case '3': query_by_phone(); break;
+            case '3': query_by_number(); break;
             case '4': query_by_email(); break;
             case '5': query_by_address(); break;
         }
@@ -197,7 +199,7 @@ void query_by_age(void)
 }
 
 // 以手机为关键词查询记录
-void query_by_phone(void)
+void query_by_number(void)
 {
     char buf[BUFFER_LEN]; 
     printf("请键入欲查询的电话："); str_input(buf);
